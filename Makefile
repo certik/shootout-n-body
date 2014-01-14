@@ -1,4 +1,4 @@
-all: fortran c
+all: fortran c c3
 
 fortran:
 	ifort -O2 -xHost nbody.f90

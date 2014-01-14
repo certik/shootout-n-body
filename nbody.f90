@@ -29,7 +29,7 @@ contains
   subroutine advance(x,v,mass)
     real(dp), intent(inout) :: x(3,NB),v(3,NB)
     real(dp), intent(in) :: mass(NB)
-    real(dp) :: r(3,NPAIR),rmag(3),mag(NPAIR)
+    real(dp) :: r(3,NPAIR),mag(NPAIR)
     integer :: i,j,k
     k = 1
     do i = 1, NB - 1

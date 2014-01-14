@@ -1,7 +1,7 @@
 all: fortran c
 
 fortran:
-	ifort nbody.f90
+	ifort -O2 -xHost nbody.f90
 	time ./a.out 50000000
 
 c:

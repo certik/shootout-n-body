@@ -7,3 +7,7 @@ fortran:
 c:
 	gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 nbody.c -lm
 	time ./a.out 50000000
+
+c3:
+	gcc -pipe -Wall -O3 -fomit-frame-pointer -march=native -mfpmath=sse -msse3 nbody3.c -lm
+	time ./a.out 50000000

@@ -10,8 +10,8 @@
 program nbody
   implicit none
   integer, parameter :: dp=kind(1.d0)
-  real(dp),parameter :: TSTEP=0.01d0, PI=3.141592653589793d0
-  real(dp),parameter :: SOLAR_MASS=4*PI*PI,DAYS_PER_YEAR=365.24d0
+  real(dp),parameter :: TSTEP=0.01_dp, PI=3.141592653589793_dp
+  real(dp),parameter :: SOLAR_MASS=4*PI*PI,DAYS_PER_YEAR=365.24_dp
   integer ,parameter :: NB=5,NPAIR=NB*(NB-1)/2
   real(dp) :: x(3,NB), v(3,NB), mass(NB), e
   integer :: nstep,i
@@ -53,7 +53,7 @@ contains
     real(dp), intent(in) :: x(3,NB),v(3,NB),mass(NB)
     real(dp) :: energy,pe
     integer :: i,j
-    energy = 0.5d0*dot_product(mass,sum(v**2,dim=1))
+    energy = 0.5_dp*dot_product(mass,sum(v**2,dim=1))
     do i = 1, NB - 1
        do j = i + 1, NB
           pe = pe - mass(i)*mass(j)/norm2(x(:,i) - x(:,j))
@@ -63,7 +63,7 @@ contains
   end function energy
   subroutine init(x,v,mass)
     real(dp),intent(out)::x(3,NB),v(3,NB),mass(NB)
-    real(dp),dimension(3,NB),parameter :: xi=reshape([0.d0,0.d0,0.d0,&              
+    real(dp),dimension(3,NB),parameter :: xi=reshape([0.d0,0.d0,0.d0,&
    &4.84143144246472090d+00,-1.16032004402742839d+00,-1.03622044471123109d-01,&
    &8.34336671824457987d+00, 4.12479856412430479d+00,-4.03523417114321381d-01,&
    &1.28943695621391310d+01,-1.51111514016986312d+01,-2.23307578892655734d-01,&
